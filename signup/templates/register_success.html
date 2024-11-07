@@ -97,6 +97,27 @@
                 width: 90%;
             }
         }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center !important;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 100%; /* Ensure the button takes the full width of its container */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center the button horizontally */
+            align-items: center; /* Center the button vertically */
+            margin-top: 20px; /* Add some space above the button */
+        }
     </style>
 </head>
 <body>
@@ -112,6 +133,7 @@
         <div class="login-form">
             <div class="form-title">Registration Successful</div>
             <p>Thank you for registering! Your account has been created successfully.</p>
+            <a href="{% url 'signup:login' %}" class="button">Login now</a>
         </div>
     </div>
 </body>
