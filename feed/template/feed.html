@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .sidebar, .main-content, .right-sidebar {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            width: 20%;
+        }
+        .main-content {
+            width: 55%;
+        }
+        .right-sidebar {
+            width: 20%;
+        }
+        .profile {
+            text-align: center;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .profile h2 {
+            margin: 10px 0;
+        }
+        .profile p {
+            color: #777;
+        }
+        .connections, .groups {
+            margin-top: 20px;
+        }
+        .connections p, .groups p {
+            margin: 5px 0;
+        }
+        .post {
+            margin-bottom: 20px;
+        }
+        .post img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .post h3 {
+            margin: 10px 0;
+        }
+        .post p {
+            color: #555;
+        }
+        .events, .connections-list {
+            margin-top: 20px;
+        }
+        .events h3, .connections-list h3 {
+            margin-bottom: 10px;
+        }
+        .events ul, .connections-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .events li, .connections-list li {
+            margin-bottom: 10px;
+        }
+        .events a, .connections-list a {
+            color: #0073b1;
+            text-decoration: none;
+        }
+        .events a:hover, .connections-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="profile.jpg" alt="Profile Picture">
+                <h2>John Deo</h2>
+                <p>MS in Human Computer Interaction</p>
+                <p>334 Connections</p>
+                <p>12 Groups</p>
+                <a href="#">View my profile</a>
+            </div>
+            <div class="connections">
+                <h3>Level Up Your Journey With DeConnect</h3>
+                <a href="#">Get Started</a>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="post">
+                <h3>Michel Cook</h3>
+                <p>Faculty in AI</p>
+                <p>Learn the art of Design Thinking in a hands-on workshop led by DePaul faculty. Perfect for aspiring problem-solvers! <a href="#">RSVP Now and Start Designing!</a></p>
+                <p>24 Likes 10 Comments</p>
+            </div>
+            <div class="post">
+                <h3>Lilly Cooperson</h3>
+                <p>MS in Human Computer Interaction</p>
+                <p>How Advertising Shapes Our Minds</p>
+                <p>In today's world, advertising is everywhere—from our phones to our commutes—and it influences us more than we might think. This article dives deep into the impact advertising has on our minds, complete with practical examples that reveal how ads shape our thoughts, behaviors, and decisions. <a href="#">Link Here</a></p>
+                <img src="advertising.jpg" alt="Advertising Image">
+                <p>13 Likes 17 Comments</p>
+            </div>
+            <div class="post">
+                <h3>Maria James</h3>
+                <p>MS in Cyber Security</p>
+                <p>Harnessing AI for Enhanced Cybersecurity Defenses. <a href="#">Read more.</a></p>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="events">
+                <h3>Upcoming Events</h3>
+                <ul>
+                    <li><a href="#">Design Thinking Workshop</a> Oct 25, 2024 | 5:00 PM</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -7,7 +7,7 @@ def validate_depaul_email(value):
         raise ValidationError('Email must be a DePaul University email address (@depaul.edu)')   
     
 # Create your models here.
-class Members (models.Model):
+class Member (models.Model):
     class UserType(models.TextChoices):
         STUDENT = 'ST', 'Student'
         FACULTY = 'FA', 'Faculty'

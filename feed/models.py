@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from signup.models import Member
 
 # Create your models here.
 class Events(models.Model):
