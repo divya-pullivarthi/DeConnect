@@ -1,14 +1,17 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 
 # Login Form
-class LoginForm(forms.Form):
-    email = forms.EmailField(
+class LoginForm(AuthenticationForm):
+    username = forms.EmailField(
         widget=forms.EmailInput(attrs={
             'placeholder': 'Email Address',
             'class': 'form-control'
         }),
         label=''
-       )
+    )
 #we used widget to hide the password using special characters like *.
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={

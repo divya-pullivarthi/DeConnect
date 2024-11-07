@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from signup.forms import LoginForm
 from signup.forms import RegistrationForm
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
 def login_form(request):
@@ -20,3 +21,7 @@ def registration_form(request):
         "registration_form": registration_form
     })
 
+
+class CustomLoginView(LoginView):
+    form_class = LoginForm
+    template_name = 'login.html'

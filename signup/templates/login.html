@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Split Page Layout</title>
+    <title>DeConnect</title>
     <style>
         body {
             margin: 0;
@@ -113,8 +113,8 @@
             <div class="form-title">WELCOME BACK!</div>
             <form method="post">
                 {% csrf_token %}
-                {{ login_form.email }}
-                {{ login_form.password }}
+                {{ form.username }}
+                {{ form.password }}
                 <button type="submit">Login</button>
             </form>
                 <a href="#">Forgot Password?</a>
