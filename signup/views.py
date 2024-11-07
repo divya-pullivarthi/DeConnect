@@ -3,12 +3,16 @@ from django.http import HttpResponse
 from signup.forms import LoginForm
 from signup.forms import RegistrationForm
 from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
 
 # Create your views here.
 
 class CustomLoginView(LoginView):
     form_class = LoginForm
     template_name = 'login.html'
+
+    def get_success_url(self):
+        return reverse_lazy('landing:landing_page')
 
 
 def registration_form(request):
