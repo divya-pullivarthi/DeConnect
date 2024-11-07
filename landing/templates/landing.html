@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DePaul Network - Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #F3F8FF;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0057B7;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .welcome-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .feed {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+        .posts {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .post {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .post:last-child {
+            border-bottom: none;
+        }
+        .create-post {
+            background-color: #F2A359;
+            color: #000000;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .title {
+            color: #004AAD;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .feed {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DePaul Network</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Messages</a>
+            {% comment %} <a href="{% url 'logout' %}">Logout</a> {% endcomment %}
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="welcome-section">
+            <h1 class="title">Welcome back, {{ user.first_name }}!</h1>
+            <p>Stay connected with your DePaul community. What's new today?</p>
+        </section>
+
+        <div class="feed">
+            <div class="posts">
+                <button class="create-post">Create a Post</button>
+                {% for post in recent_posts %}
+                    <div class="post">
+                        <h3>{{ post.author.get_full_name }}</h3>
+                        <p>{{ post.content }}</p>
+                        <small>Posted on {{ post.created_at|date:"F d, Y" }}</small>
+                    </div>
+                {% empty %}
+                    <p>No recent posts to display.</p>
+                {% endfor %}
+            </div>
+            <div class="sidebar">
+                <h2>Upcoming Events</h2>
+                <ul>
+                    {% for event in upcoming_events %}
+                        <li>{{ event.title }} - {{ event.date|date:"F d, Y" }}</li>
+                    {% empty %}
+                        <li>No upcoming events.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
