@@ -25,13 +25,13 @@ class RegistrationForm(forms.Form):
     first_name = forms.CharField(
                 widget=forms.PasswordInput(attrs={
             'placeholder': 'First Name',
-            'class': 'form-control'
+            'class': 'form-control fname'
         }),
         label='',
     )
     last_name = forms.CharField( widget=forms.PasswordInput(attrs={
             'placeholder': 'Last Name',
-            'class': 'form-control'
+            'class': 'form-control lname'
         }),
         label='',
     )
