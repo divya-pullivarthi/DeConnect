@@ -23,19 +23,21 @@ class LoginForm(forms.Form):
 # Registration Form
 class RegistrationForm(forms.Form):
     first_name = forms.CharField(
-                widget=forms.PasswordInput(attrs={
+        widget=forms.TextInput(attrs={
             'placeholder': 'First Name',
             'class': 'form-control'
         }),
         label='',
     )
-    last_name = forms.CharField( widget=forms.PasswordInput(attrs={
+    last_name = forms.CharField(
+        widget=forms.TextInput(attrs={
             'placeholder': 'Last Name',
             'class': 'form-control'
         }),
         label='',
     )
-    email = forms.EmailField( widget=forms.PasswordInput(attrs={
+    email = forms.EmailField(
+        widget=forms.EmailInput(attrs={
             'placeholder': 'DePaul Email Address',
             'class': 'form-control'
         }),
