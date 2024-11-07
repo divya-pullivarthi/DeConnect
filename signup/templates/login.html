@@ -1,6 +1,125 @@
-<html>
-    <body>
-        {{ login_form }}
-    </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Page Layout</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            flex-direction: row;
+            font-family: sans-serif;
+        }
+        .left-side, .right-side {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .left-side {
+            background-color: #F3F8FF;
+        }
+        .right-side {
+            background-color: #0057B7;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo, .title, .description {
+            margin: 10px 0;
+        }
+        .image {
+            align-self: flex-end;
+        }
+        .login-form {
+            text-align: center;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 70%; /* Adjust height to better center the content */
+            justify-content: center;
+        }
+        .login-form input, .login-form button {
+            width: 90%; /* Adjust width to be more prominent */
+            margin: 10px 0; /* Add margin for spacing */
+            padding: 10px; /* Ensure padding for better usability */
+        }
+        .login-form input {
+            background-color: #0057B7; /* Match the right side background color */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+            color: white; /* Text color */
+            box-sizing: border-box; /* Ensure border is inside the element */
+        }
 
+        .login-form input::placeholder {
+            color: white; /* White placeholder text */
+        }
+
+
+        .login-form a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            font-size: 14px; /* Match the font size for the forgot password link */
+            text-align: right; /* Align text to the right */
+            width: 90%; /* Ensure it takes the same width as the input fields */
+        }
+        .form-title {
+            font-size: 46px;
+            margin-bottom: 20px; /* Add margin to space out the title */
+        }
+        button {
+            background-color: #F2A359;
+            color: #000000;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 90%; /* Ensure button width matches input fields */
+        }
+        .title {
+            color: #004AAD;
+            font-size: 22px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .left-side, .right-side {
+                width: 100%;
+            }
+            .login-form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left-side">
+        <div>
+            <div class="logo">LOGO</div>
+            <div class="title">Your Professional Network at DePaul University</div>
+            <div class="description">Connect with peers, faculty, and professionals across DePaul University. Discover opportunities, collaborate on projects, and grow your professional network.</div>
+        </div>
+        <div class="image">Image</div>
+    </div>
+    <div class="right-side">
+        <div class="login-form">
+            <div class="form-title">WELCOME BACK!</div>
+            <form method="post">
+                {% csrf_token %}
+                {{ login_form.email }}
+                {{ login_form.password }}
+                <button type="submit">Login</button>
+            </form>
+                <a href="#">Forgot Password?</a>
+                <br><div>Don’t have an account yet? <a href="#" style="color:#F2A359">Sign Up Here.</a></div>
+        </div>
+    </div>
+</body>
+</html>
