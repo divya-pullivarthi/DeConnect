@@ -96,28 +96,6 @@
             .login-form {
                 width: 90%;
             }
-            .fname, .lname {
-                width: 45% !important;
-            }
-        }
-
-        .fname, .lname {
-            width: 45% !important;
-        }
-
-        .login-form select {
-            width: 73%;
-            background-color: #0057B7;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            box-sizing: border-box;
-            height: 10%;
-        }
-        .error-message {
-            color: red;
-            font-weight: bold;
-            margin-top: 5px;
-            font-size: 10px;
         }
     </style>
 </head>
@@ -132,40 +110,8 @@
     </div>
     <div class="right-side">
         <div class="login-form">
-            <div class="form-title">CREATE ACCOUNT</div>
-            <form method="post" action="{% url 'signup:registration_form' %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ registration_form.non_field_errors }}
-
-                {{ registration_form.first_name }}
-                {{ registration_form.last_name }}
-                {% if registration_form.first_name.errors %}
-                    <span class="error-message">{{ registration_form.first_name.errors }}</span>
-                {% endif %}
-
-                {% if registration_form.last_name.errors %}
-                    <span class="error-message">{{ registration_form.last_name.errors }}</span>
-                {% endif %}
-
-                {{ registration_form.email }}
-                {% if registration_form.email.errors %}
-                    <span class="error-message">{{ registration_form.email.errors }}</span>
-                {% endif %}
-
-                {{ registration_form.password }}
-                {% if registration_form.password.errors %}
-                    <span class="error-message">{{ registration_form.password.errors }}</span>
-                {% endif %}
-
-                {{ registration_form.confirm_password }}
-                {% if registration_form.confirm_password.errors %}
-                    <span class="error-message">{{ registration_form.confirm_password.errors }}</span>
-                {% endif %}
-
-                <br><span class="user-type"><label for="{{ registration_form.user_type.id_for_label }}">You are a {{ registration_form.user_type }}  </label></span>
-                <br><br><button type="submit">Create Account</button>
-            </form>
-                <br><div>Already a member? <a href="#" style="color:#F2A359">Login Here.</a></div>
+            <div class="form-title">Registration Successful</div>
+            <p>Thank you for registering! Your account has been created successfully.</p>
         </div>
     </div>
 </body>
