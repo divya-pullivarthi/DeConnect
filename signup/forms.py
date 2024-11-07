@@ -1,14 +1,17 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 
 # Login Form
-class LoginForm(forms.Form):
-    email = forms.EmailField(
+class LoginForm(AuthenticationForm):
+    username = forms.EmailField(
         widget=forms.EmailInput(attrs={
             'placeholder': 'Email Address',
             'class': 'form-control'
         }),
         label=''
-       )
+    )
 #we used widget to hide the password using special characters like *.
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={
@@ -21,28 +24,7 @@ class LoginForm(forms.Form):
     )
 
 # Registration Form
-class RegistrationForm(forms.Form):
-    first_name = forms.CharField(
-        widget=forms.TextInput(attrs={
-            'placeholder': 'First Name',
-            'class': 'form-control'
-        }),
-        label='',
-    )
-    last_name = forms.CharField(
-        widget=forms.TextInput(attrs={
-            'placeholder': 'Last Name',
-            'class': 'form-control'
-        }),
-        label='',
-    )
-    email = forms.EmailField(
-        widget=forms.EmailInput(attrs={
-            'placeholder': 'DePaul Email Address',
-            'class': 'form-control'
-        }),
-        label='',
-    )
+class RegistrationForm(forms.ModelForm):
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
@@ -62,26 +44,62 @@ class RegistrationForm(forms.Form):
         max_length=20
     )
 
-    # Define choices for user type
-    USER_TYPE_CHOICES = [
-        ('student', 'Student'),
-        ('faculty', 'Faculty'),
-        ('alumni', 'Alumni'),
-    ]
+    class Meta:
+        model = get_user_model()
+        fields = ['first_name', 'last_name', 'email', 'user_type', 'title', 'display_picture', 'bio']
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'placeholder': 'First Name',
+                'class': 'form-control fname'
+            }),
+            'last_name': forms.TextInput(attrs={
+                'placeholder': 'Last Name',
+                'class': 'form-control lname'
+            }),
+            'email': forms.EmailInput(attrs={
+                'placeholder': 'DePaul Email Address',
+                'class': 'form-control'
+            }),
+            'user_type': forms.Select(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'display_picture': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+            'bio': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+        labels = {
+            'first_name': '',
+            'last_name': '',
+            'email': '',
+            'user_type': 'Are you a Student, Faculty, or Alumni?',
+            'title': '',
+            'display_picture': '',
+            'bio': '',
+        }
 
-    # Add ChoiceField for user type
-    user_type = forms.ChoiceField(
-        choices=USER_TYPE_CHOICES,
-        label="Are you a Student, Faculty, or Alumini?",
-        widget=forms.Select(attrs={'class': 'form-control'})
-    )
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        User = get_user_model()
+        if User.objects.filter(email=email).exists():
+            raise ValidationError('A user with that email already exists.')
+        return email
 
-     # Add checkbox for terms and conditions
-    accept_terms = forms.BooleanField(
-        required=True,
-        label="I have read and agree to the Terms of Service and Privacy Policy. By creating an account, I understand and accept the following.",
-        widget=forms.CheckboxInput(attrs={
-            'class': 'form-check-input',
-            'style': 'float: left; margin-right: 10px;'
-        }),
-    )
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        confirm_password = cleaned_data.get('confirm_password')
+
+        if password and confirm_password and password != confirm_password:
+            self.add_error('confirm_password', 'Passwords do not match.')
+
+        return cleaned_data
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if not first_name:
+            raise ValidationError('This field is required.')
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if not last_name:
+            raise ValidationError('This field is required.')
+        return last_name
