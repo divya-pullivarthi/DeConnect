@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,12 +120,18 @@
             margin-top: 5px;
             font-size: 10px;
         }
+        .logo-image {
+            width: 100px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
     </style>
 </head>
 <body>
     <div class="left-side">
         <div>
-            <div class="logo">LOGO</div>
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo-image">
+            </div>
             <div class="title">Your Professional Network at DePaul University</div>
             <div class="description">Connect with peers, faculty, and professionals across DePaul University. Discover opportunities, collaborate on projects, and grow your professional network.</div>
         </div>
@@ -165,7 +172,7 @@
                 <br><span class="user-type"><label for="{{ registration_form.user_type.id_for_label }}">You are a {{ registration_form.user_type }}  </label></span>
                 <br><br><button type="submit">Create Account</button>
             </form>
-                <br><div>Already a member? <a href="#" style="color:#F2A359">Login Here.</a></div>
+                <br><div>Already a member? <a href="{% url 'signup:login' %}" style="color:#F2A359">Login Here.</a></div>
         </div>
     </div>
 </body>

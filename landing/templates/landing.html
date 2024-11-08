@@ -23,10 +23,24 @@
             font-size: 24px;
             font-weight: bold;
         }
+        {% comment %} .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        } {% endcomment %}
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        
         .nav-links a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
+        }
+        
+        .nav-links form {
+            margin-left: 20px; /* Ensure consistent spacing */
         }
         .container {
             max-width: 1200px;
@@ -84,6 +98,32 @@
                 grid-template-columns: 1fr;
             }
         }
+        {% comment %} .logout-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px; /* Rounded corners */
+        } {% endcomment %}
+
+        .logout-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px; /* Rounded corners */
+        }
     </style>
 </head>
 <body>
@@ -93,7 +133,10 @@
             <a href="#">Home</a>
             <a href="#">Profile</a>
             <a href="#">Messages</a>
-            {% comment %} <a href="{% url 'logout' %}">Logout</a> {% endcomment %}
+            <form method="post" action="{% url 'signup:logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
         </div>
     </nav>
 
