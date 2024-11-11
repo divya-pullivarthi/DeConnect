@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile and Connections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fb;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+            gap: 20px;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            width: 200px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 350px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+        .profile-container h2 {
+            color: #0073b1;
+            margin: 10px 0;
+        }
+        .profile-container p {
+            color: #666;
+            font-size: 14px;
+        }
+        .profile-container .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .profile-container .stats div {
+            text-align: center;
+        }
+        .profile-container .stats div p {
+            margin: 5px 0;
+            color: #333;
+            font-weight: bold;
+        }
+        .profile-container a {
+            display: inline-block;
+            /* background-color: #0073b1; */
+            color: #0073b1;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .profile-container a:hover {
+            color: #023149;
+        }
+
+        /* Connections and Suggested Connections Section */
+        .connections-suggested-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        /* Connections Section */
+        .connections-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .connections-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .connections-header h3 {
+            font-size: 18px;
+            color:#005b8a;
+        }
+        .connections-header span {
+            font-size: 12px;
+            color:#838585;
+        }
+        .connections-header .total-connections {
+            font-size: 14px;
+            color: #666;
+        }
+        .connections-tabs {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+        .connections-tabs span {
+            color: #7b7d7e;
+            cursor: pointer;
+            padding: 5px 10px;
+            position: relative;
+        }
+        .connections-tabs span.active {
+            color:#005b8a;
+            font-weight: bold;
+            border-bottom: 2px solid #f77a13;
+        }
+
+        /* Connection List */
+        .connection-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .connection-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .connection-item:last-child {
+            border-bottom: none;
+        }
+        .connection-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .connection-info {
+            flex-grow: 1;
+        }
+        .connection-info h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #0073b1;
+        }
+        .connection-info p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .connection-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            background-color: #0073b1;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #005b8a;
+        }
+        .menu-button {
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            color: 2px solid #f77a13;
+            cursor: pointer;
+        }
+
+        /* Suggested Connections Section */
+        .suggested-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .suggested-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .suggested-header h3 {
+            font-size: 18px;
+            color: #005b8a;
+        }
+        .suggested-header span {
+            font-size: 12px;
+            color: #005b8a;
+            border-bottom: 1px solid #f77a13;
+        }
+        .suggested-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        .suggested-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .suggested-item:last-child {
+            border-bottom: none;
+        }
+        .suggested-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+        .suggested-info h4 {
+            font-size: 16px;
+            color: #0073b1;
+        }
+        .suggested-info p {
+            font-size: 14px;
+            color: #666;
+        }
+        .suggested-button {
+            background-color:  #0073b1;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .suggested-button:hover {
+            background-color:  #0073b1;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Profile Section -->
+        <div class="profile-container">
+            <img src="http://studio.code.org/blockly/media/skins/applab/static_avatar.png" alt="Profile Image" class="profile-image">
+            <h2>John Doe</h2>
+            <p>MS in Human-Computer Interaction</p>
+            <div class="stats">
+                <div>
+                    <span>334</span>
+                    <p>Connections</p>
+                </div>
+                <div>
+                    <span>12</span>
+                    <p>Groups</p>
+                </div>
+            </div>
+            <a href="#">View my profile</a>
+        </div>
+
+        <!-- Connections and Suggested Connections Section -->
+        <div class="connections-suggested-container">
+            <!-- Connections Section -->
+            <div class="connections-container">
+                <div class="connections-header">
+                    <h3>My Connections</h3>
+                    <span class="total-connections">1067 Connections</span>
+                </div>
+                
+                <!-- Connections Tabs with Underline -->
+                <div class="connections-tabs">
+                    <span class="active">All</span>
+                    <span>Received</span>
+                    <span>Sent</span>
+                </div>
+                
+                <ul class="connection-list">
+                    <li class="connection-item">
+                        <img src="http://studio.code.org/blockly/media/skins/bee/static_avatar.png" alt="Connection Avatar" class="connection-avatar">
+                        <div class="connection-info">
+                            <h4>Michel Cook</h4>
+                            <p>Faculty in AI</p>
+                        </div>
+                        <div class="connection-actions">
+                            <button class="button">Message</button>
+                            <button class="menu-button">⋮</button>
+                        </div>
+                    </li>
+                    <li class="connection-item">
+                        <img src="https://via.placeholder.com/40" alt="Connection Avatar" class="connection-avatar">
+                        <div class="connection-info">
+                            <h4>Sarah Lee</h4>
+                            <p>Data Scientist</p>
+                        </div>
+                        <div class="connection-actions">
+                            <button class="button">Message</button>
+                            <button class="menu-button">⋮</button>
+                        </div>
+                    </li>
+                    <!-- Add more connection items here -->
+                </ul>
+            </div>
+
+            <!-- Suggested Connections Section -->
+            <div class="suggested-container">
+                <div class="suggested-header">
+                    <h3>People you may know from University</h3>
+                    <span>Show all</span>
+                </div>
+
+                <div class="suggested-list">
+                    <div class="suggested-item">
+                        <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                        <div class="suggested-info">
+                            <h4>Emily Zhang</h4>
+                            <p>PhD in Data Science</p>
+                        </div>
+                        <button class="suggested-button">Connect</button>
+                    </div>
+                    <div class="suggested-item">
+                        <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                        <div class="suggested-info">
+                            <h4>David Lee</h4>
+                            <p>Senior Software Engineer</p>
+                        </div>
+                        <button class="suggested-button">Connect</button>
+                    </div>
+                    <div class="suggested-item">
+                        <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                        <div class="suggested-info">
+                            <h4>Alice Cooper</h4>
+                            <p>UX/UI Designer Engineer</p>
+                        </div>
+                        <button class="suggested-button">Connect</button>
+                    </div>
+                    <div class="suggested-item">
+                        <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                        <div class="suggested-info">
+                            <h4>John Smith</h4>
+                            <p>Marketing Specialist</p>
+                        </div>
+                        <button class="suggested-button">Connect</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
