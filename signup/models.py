@@ -47,11 +47,6 @@ class Member(AbstractUser):
         return self.email
 
 
-# events
-# groups
-# post
-
-
 
 
 
