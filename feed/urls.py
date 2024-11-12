@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
+from views import post_form, connections
 
 #URL Configuration
 urlpatterns = [
-    path('feed/', views.post_form)
+    path('', post_form),
+    path('connections/', connections),
 ]
