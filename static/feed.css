@@ -241,6 +241,9 @@
   .justify-items {
     justify-items: center;
   }
+  .justify-space {
+    justify-content: space-around;
+  }
   .font-sans {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
@@ -343,6 +346,10 @@
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
+  .my-3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
   .mx-2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -370,6 +377,9 @@
   }
   .mt-1 {
     margin-top: 0.25rem;
+  }
+  .mt-2 {
+    margin-top: 0.5rem;
   }
   .mr-1 {
     margin-right: 0.25rem;
@@ -739,7 +749,7 @@
 .inner-box .text {
     width: 80%;
     text-align: center;
-    margin: 0.5em 0;
+    margin: 0.25em 0;
 }
 .nav-container {
     display: flex;
@@ -793,4 +803,72 @@ body {
   top: 50%;
   transform: translateY(-50%);
   color: #ccc;
+}
+
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-bottom: 1em;
+  margin-top: 1em;
+  background-color: #fff;
+}
+.post-top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.post-top img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.post-top .user-info {
+  display: flex;
+  flex-direction: column;
+}
+.post-top .user-info .name {
+  font-weight: bold;
+}
+.post-top .user-info .title {
+  color: #666;
+}
+.post-center {
+  flex-grow: 1;
+  width: 100%;
+}
+.post-center .content {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+.post-center .stats {
+  font-size: 0.9em;
+}
+.post-bottom button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.5em;
+}
+.post-bottom button:hover {
+  background-color: #003366;
+}
+
+.like-b {
+  border-bottom: 1px solid #F2A359;
+}
+
+.like-color {
+  color: #F2A359;
 }

@@ -67,7 +67,7 @@
     </header>
 
     <div class="nav-container">
-        <div class="nav-item">
+        <div class="nav-item like-b">
             <div class="title">Feed</div>
         </div>
         <div class="nav-item">
@@ -106,7 +106,7 @@
                 </p>
             </div>
 
-            <div class="border-gray-400 text-sm">
+            <div class="border-gray-400">
                 <div class="outer-box">
                     <div class="inner-box">
                         <div class="text" style="font-weight:bold;">334</div>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div style="justify-items:center">
-                    <a href="#" class="flex justify-between items-center my-1 p-1 border-b" style="color:#0057B7;">
+                    <a href="#" class="text-sm flex justify-between items-center my-1 p-1 border-b font-medium" style="color:#0057B7;">
                         <span>View my profile</span>
                     </a>
                 </div>
@@ -162,171 +162,43 @@
 
          <!-- Posts -->
          <article class="posts">
-           <section class="post bg-white py-2 my-2 border rounded">
-             <!-- top -->
-             <div class="post-header p-2 flex items-start">
-               <a href="#" class="w-12 h-12 mr-2">
-                <img src="https://homevest.com/wp-content/uploads/2019/05/female1-512.png" alt="image">
-               </a>
+            <div class="post-container">
+                <div class="post-top">
+                    <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-7 h-7 rounded-full">
+                    <div class="user-info">
+                        <div class="name">John Doe</div>
+                        <div class="title">Software Engineer</div>
+                    </div>
+                </div>
+                <div class="post-center border-gray-300 border-b border-t my-3">
+                    <div class="content">Learn the art of Design Thinking in a hands-on workshop led by DePaul faculty. Perfect for aspiring problem-solvers! RSVP Now and Start Designing!</div>
+                    <div class="stats link-blue my-3">
+                        <span class="like-b font-medium">10 Likes</span>
+                        <span class="like-b font-medium mx-10">5 Comments</span>
+                    </div>
+                </div>
 
-               <a href="#" >
-                  <h3 class="flex items-center" >
-                    <span class="text-gray-700 font-bold hover:text-blue-500 hover:underline ">Harriet Best</span>
-                    <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
-                    <span class="text-gray-500 font-light">Following</span>
-                  </h3>
-
-                  <p class="text-sm text-gray-500">
-                    Founder and Writer at Harriet Photography
-                  </p>
-
-                  <p class="time text-sm text-gray-500 flex items-center">
-                    <span>1d</span>
-                    <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
-                    <i class="fas fa-globe-asia text-lg"></i>
-                  </p>
-
-               </a>
-
-               <button style="margin-left:auto;" class="dots w-7 h-7 flex justify-center items-center rounded-full hover:bg-gray-200">
-                  <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
-                  <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
-                  <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
-               </button>
-
-             </div>
-
-             <!-- post article -->
-             <div class="px-2">
-               <p class="py-2">
-                 Checkout my new photos from Melbourne City
-               </p>
-
-               <a href="#" class="text-blue-600 hover:underline">https://harrietfh.me</a>
-             </div>
-
-             <!-- content -->
-
-             <img src="https://images.unsplash.com/photo-1494236472818-d35e50e604cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80" alt="Melbourne" class="w-full h-50 my-2">
-
-             <!-- likes  -->
-             <div class="mx-3 px-2 h-8 m-auto border-b border-gray-300">
-              <a href="#" class="h-full flex items-center">
-                <i class="fas fa-thumbs-up mx-0.5 text-xs text-blue-500"></i>
-                <i class="fas fa-heart mx-0.5 text-xs text-red-500"></i>
-                
-                <span class="count text-xs mb-0.5 ml-2 hover:text-blue-500 hover:underline">105</span>
-              </a>
+                <!-- comments -->
+                <div class="mt-1 mx-3 flex items-center w-full justify-space">
+                  <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                   <i class="far fa-heart text-xl mr-1.5 like-color"></i>
+                   <span class="mt-0.25 link-blue font-medium">Like </span> 
+                  </button>
+   
+                  <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                   <i class="far fa-comment-alt text-xl mr-1.5 like-color"></i> 
+                   <span class="mt-0.25 link-blue font-medium">Comment</span>  
+                  </button>
+   
+                  <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                   <i class="fas fa-share-alt text-xl mr-1.5 like-color"></i> 
+                   <span class="mt-0.25 link-blue font-medium">Share</span>  
+                  </button>
+   
+                </div>
             </div>
 
-             <!-- comments -->
-             <div class="mt-1 mx-3 flex items-center">
-               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                <i class="far fa-thumbs-up text-xl mr-1.5"></i> 
-                <span class="mt-0.25">Like </span> 
-               </button>
-
-               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                <i class="far fa-comment-dots text-xl mr-1.5"></i> 
-                <span class="mt-0.25">Comment</span>  
-               </button>
-
-               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                <i class="fas fa-share text-xl mr-1.5"></i> 
-                <span class="mt-0.25">Share</span>  
-               </button>
-
-               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                <i class="fas fa-paper-plane text-xl mr-1.5"></i> 
-                <span class="mt-0.25">Send</span>  
-               </button>
-
-             </div>
-
-            </section>
-
-            <section class="post bg-white py-2 my-2 border rounded">
-              <!-- top -->
-              <div class="post-header p-2 flex items-start">
-                <a href="#" class="w-12 h-12 mr-2">
-                 <img src="https://homevest.com/wp-content/uploads/2019/05/female1-512.png" alt="image">
-                </a>
- 
-                <a href="#" >
-                   <h3 class="flex items-center" >
-                     <span class="text-gray-700 font-bold hover:text-blue-500 hover:underline ">Harriet Best</span>
-                     <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
-                     <span class="text-gray-500 font-light">Following</span>
-                   </h3>
- 
-                   <p class="text-sm text-gray-500">
-                     Founder and Writer at Harriet Photography
-                   </p>
- 
-                   <p class="time text-sm text-gray-500 flex items-center">
-                     <span>1d</span>
-                     <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
-                     <i class="fas fa-globe-asia text-lg"></i>
-                   </p>
- 
-                </a>
- 
-                <button style="margin-left:auto;" class="dots w-7 h-7 flex justify-center items-center rounded-full hover:bg-gray-200">
-                   <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
-                   <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
-                   <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
-                </button>
- 
-              </div>
- 
-              <!-- post article -->
-              <div class="px-2">
-                <p class="py-2">
-                  Checkout my new photos from Melbourne City
-                </p>
- 
-                <a href="#" class="text-blue-600 hover:underline">https://harrietfh.me</a>
-              </div>
- 
-              <!-- content -->
- 
-              <img src="https://images.unsplash.com/photo-1494236472818-d35e50e604cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80" alt="Melbourne" class="w-full h-50 my-2">
- 
-              <!-- likes  -->
-              <div class="mx-3 px-2 h-8 m-auto border-b border-gray-300">
-               <a href="#" class="h-full flex items-center">
-                 <i class="fas fa-thumbs-up mx-0.5 text-xs text-blue-500"></i>
-                 <i class="fas fa-heart mx-0.5 text-xs text-red-500"></i>
-                 
-                 <span class="count text-xs mb-0.5 ml-2 hover:text-blue-500 hover:underline">105</span>
-               </a>
-             </div>
- 
-              <!-- comments -->
-              <div class="mt-1 mx-3 flex items-center">
-                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                 <i class="far fa-thumbs-up text-xl mr-1.5"></i> 
-                 <span class="mt-0.25">Like </span> 
-                </button>
- 
-                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                 <i class="far fa-comment-dots text-xl mr-1.5"></i> 
-                 <span class="mt-0.25">Comment</span>  
-                </button>
- 
-                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                 <i class="fas fa-share text-xl mr-1.5"></i> 
-                 <span class="mt-0.25">Share</span>  
-                </button>
- 
-                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                 <i class="fas fa-paper-plane text-xl mr-1.5"></i> 
-                 <span class="mt-0.25">Send</span>  
-                </button>
- 
-              </div>
- 
-             </section>
+           
           </article>
         </div>
 
@@ -359,8 +231,8 @@
                 </a>
             </div>
 
-            <div class="justify-items">
-                <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b" style="color:#0057B7;">
+            <div class="justify-items mt-4">
+                <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;">
                     View all events 
                 </a>
             </div>
@@ -383,7 +255,7 @@
                   <img src="https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png" alt="Avatar" class="rounded-full">
                 </a>
                 <a href="#">
-                  <h2>Jane Doe</h2>
+                  <h2 class="link-blue">Jane Doe</h2>
                   <p class="text-gray-400 text-sm">Vice Chairman</p>
                 </a>
               </div>
@@ -396,15 +268,15 @@
                   <img src="https://c0.klipartz.com/pngpicture/557/749/gratis-png-iconos-de-computadora-avatar-usuario-perfil-blog-personal-thumbnail.png" alt="Avatar" class="rounded-full">
                 </a>
                 <a href="#">
-                  <h2>John Doe</h2>
+                  <h2 class="link-blue">John Doe</h2>
                   <p class="text-gray-400 text-sm">CTO</p>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="justify-items">
-              <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b" style="color:#0057B7;">
+          <div class="justify-items mt-4">
+              <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;">
                 View all connections 
               </a>
           </div>
@@ -428,7 +300,7 @@
                     <img src="https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png" alt="Avatar" class="rounded-full">
                   </a>
                   <a href="#">
-                    <h2>Jane Doe</h2>
+                    <h2 class="link-blue mt-2">Global DePaul</h2>
                   </a>
                 </div>
               </div>
@@ -440,14 +312,14 @@
                     <img src="https://c0.klipartz.com/pngpicture/557/749/gratis-png-iconos-de-computadora-avatar-usuario-perfil-blog-personal-thumbnail.png" alt="Avatar" class="rounded-full">
                   </a>
                   <a href="#">
-                    <h2>John Doe</h2>
+                    <h2 class="link-blue mt-2">DISSO</h2>
                   </a>
                 </div>
               </div>
             </div>
 
-            <div class="justify-items">
-                <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b" style="color:#0057B7;">
+            <div class="justify-items mt-4">
+                <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;">
                   View all groups 
                 </a>
             </div>
