@@ -7,7 +7,7 @@ def post_form(request):
 
     feepost_form = PostForm()
 
-    return render(request, 'feed.html',{
+    return render(request, 'feed4.html',{
         "post_form": post_form
     })
 
