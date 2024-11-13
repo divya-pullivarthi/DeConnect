@@ -135,3 +135,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # This will work on Windows
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'signup.Member'
+
+AUTHENTICATION_BACKENDS = [
+    'signup.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]

@@ -23,6 +23,11 @@ class LoginForm(AuthenticationForm):
         max_length=20
     )
 
+    def clean_username(self):
+        email = self.cleaned_data.get('username')
+        return email.lower()  # Normalize email to lowercase
+
+
 # Registration Form
 class RegistrationForm(forms.ModelForm):
     password = forms.CharField(
@@ -103,3 +108,11 @@ class RegistrationForm(forms.ModelForm):
         if not last_name:
             raise ValidationError('This field is required.')
         return last_name
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        password = self.cleaned_data['password']
+        user.set_password(password)  # Set the hashed password
+        if commit:
+            user.save()
+        return user
