@@ -12,6 +12,7 @@
     
 	  <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="{% static 'feed.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'connections.css' %}">
     <style>
     </style>
 </head>
@@ -68,14 +69,14 @@
     </header>
 
     <div class="nav-container">
-        <div class="nav-item like-b">
-          <div class="title">Feed</div>
+        <div class="nav-item">
+          <div class="title"><a href="{% url 'feed:feed' %}">Feed</a></div>
         </div>
         <div class="nav-item">
           <div class="title"><a href="{% url 'feed:connections' %}">Connections</a></div>
         </div>
-        <div class="nav-item">
-          <div class="title"><a href="{% url 'feed:groups' %}">Groups</a></div>
+        <div class="nav-item like-b">
+          <div class="title">Groups</div>
         </div>
         <div class="nav-item">
           <div class="title">Events</div>
@@ -133,75 +134,90 @@
 
       <!-- article -->
       <div class="w-44p mx-10">
-         <!--Form   -->
-
-         <form class="bg-white p-2 border border-gray-300 rounded">
-          <div class="flex h-12 mb-2 px-2 border-gray-300 hover:bg-gray-200">
-            <div class="w-12 h-full flex justify-center items-center">
-              {% comment %} <i class="fas fa-edit text-xl text-blue-600"></i> {% endcomment %}
-              <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-7 h-7 rounded-full">
-            </div>
-            <input type="text" placeholder="Write Something..." class="bg-transparent w-full h-full p-4 outline-none placeholder-gray-500">
+        <div class="connections-container mb-4">
+          <div class="connections-header">
+              <h3>My Connections</h3>
+              <span class="total-connections">1067 Connections</span>
           </div>
 
-          <!-- Icons -->
-          <div class="pt-2 flex items-center">
-
-            <button class="ml-2 mt-4 py-3 px-2 rounded flex items-center hover:bg-gray-200">
-              <i class="far fa-edit mr-1.5 text-lg" style="color:#0057B7"></i> 
-              <span class="text-gray-600">Share an update</span>
-              {% comment %} #716E72 {% endcomment %}
-            </button>
-
-            <button class="ml-2 mt-4 py-3 px-2 rounded flex items-center hover:bg-gray-200">
-              <i class="far fa-clipboard mr-1.5 text-lg" style="color:#0057B7"></i> 
-              <span class="text-gray-600">Write an announcement</span>
-            </button>
-
+          <!-- Connections Tabs with Underline -->
+          <div class="connections-tabs">
+              <span class="active">All</span>
+              <span>Received</span>
+              <span>Sent</span>
           </div>
-         </form>
 
-         <!-- Posts -->
-         <article class="posts">
-            <div class="post-container">
-                <div class="post-top">
-                    <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-7 h-7 rounded-full">
-                    <div class="user-info">
-                        <div class="name">John Doe</div>
-                        <div class="title">Software Engineer</div>
-                    </div>
-                </div>
-                <div class="post-center border-gray-300 border-b border-t my-3">
-                    <div class="content">Learn the art of Design Thinking in a hands-on workshop led by DePaul faculty. Perfect for aspiring problem-solvers! RSVP Now and Start Designing!</div>
-                    <div class="stats link-blue my-3">
-                        <span class="like-b font-medium">10 Likes</span>
-                        <span class="like-b font-medium mx-10">5 Comments</span>
-                    </div>
-                </div>
-
-                <!-- comments -->
-                <div class="mt-1 mx-3 flex items-center w-full justify-space">
-                  <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                   <i class="far fa-heart text-xl mr-1.5 like-color"></i>
-                   <span class="mt-0.25 link-blue font-medium">Like </span> 
-                  </button>
-   
-                  <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                   <i class="far fa-comment-alt text-xl mr-1.5 like-color"></i> 
-                   <span class="mt-0.25 link-blue font-medium">Comment</span>  
-                  </button>
-   
-                  <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
-                   <i class="fas fa-share-alt text-xl mr-1.5 like-color"></i> 
-                   <span class="mt-0.25 link-blue font-medium">Share</span>  
-                  </button>
-   
-                </div>
-            </div>
-
-           
-          </article>
+          <ul class="connection-list">
+            <li class="connection-item">
+              <img src="http://studio.code.org/blockly/media/skins/bee/static_avatar.png" alt="Connection Avatar" class="connection-avatar">
+              <div class="connection-info">
+                  <h4>Michel Cook</h4>
+                  <p>Faculty in AI</p>
+              </div>
+              <div class="connection-actions">
+                  <button class="button">Message</button>
+                  <button class="menu-button">⋮</button>
+              </div>
+            </li>
+            <li class="connection-item">
+              <img src="https://via.placeholder.com/40" alt="Connection Avatar" class="connection-avatar">
+              <div class="connection-info">
+                  <h4>Sarah Lee</h4>
+                  <p>Data Scientist</p>
+              </div>
+              <div class="connection-actions">
+                  <button class="button">Message</button>
+                  <button class="menu-button">⋮</button>
+              </div>
+            </li>
+            <!-- Add more connection items here -->
+          </ul>
         </div>
+
+        <div class="suggested-container">
+          <div class="suggested-header">
+              <h3>People you may know from University</h3>
+              <span>Show all</span>
+          </div>
+
+          <div class="suggested-list">
+              <div class="suggested-item">
+                  <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                  <div class="suggested-info">
+                      <div>Emily Zhang</div>
+                      <p>PhD in Data Science</p>
+                  </div>
+                  <button class="suggested-button">Connect</button>
+              </div>
+              <div class="suggested-item">
+                  <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                  <div class="suggested-info">
+                      <div>David Lee</div>
+                      <p>Senior Software Engineer</p>
+                  </div>
+                  <button class="suggested-button">Connect</button>
+              </div>
+              <div class="suggested-item">
+                  <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                  <div class="suggested-info">
+                      <div>Alice Cooper</div>
+                      <p>UX/UI Designer Engineer</p>
+                  </div>
+                  <button class="suggested-button">Connect</button>
+              </div>
+              <div class="suggested-item">
+                  <img src="https://via.placeholder.com/80" alt="Suggested Avatar" class="suggested-avatar">
+                  <div class="suggested-info">
+                      <div>John Smith</div>
+                      <p>Marketing Specialist</p>
+                  </div>
+                  <button class="suggested-button">Connect</button>
+              </div>
+          </div>
+
+      </div>
+        
+      </div>
 
 
       <!-- Right sidebar -->

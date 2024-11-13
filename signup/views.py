@@ -12,7 +12,7 @@ class CustomLoginView(LoginView):
     template_name = 'login.html'
 
     def get_success_url(self):
-        return reverse_lazy('landing:landing_page')
+        return reverse_lazy('feed:feed')
 
 
 def registration_form(request):

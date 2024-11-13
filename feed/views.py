@@ -15,3 +15,7 @@ def post_form(request):
 def connections(request):
     return render(request, 'connections.html')
 
+
+def groups(request):
+    return render(request, 'groups.html')
+
