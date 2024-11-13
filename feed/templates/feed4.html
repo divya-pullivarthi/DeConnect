@@ -1,0 +1,497 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7d35781f0a.js" crossorigin="anonymous"></script> 
+    
+    <link rel="stylesheet" href="/styles.css">
+    <title>DeConnect</title>
+    <style>
+        /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji}button,input{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button{text-transform:none}[type=button],button{-webkit-appearance:button}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}h2,h3,p{margin:0}button{background-color:transparent;background-image:none}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}ul{list-style:none;margin:0;padding:0}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{font-family:inherit;line-height:inherit}*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}img{border-style:solid}input::-moz-placeholder{color:#9ca3af}input:-ms-input-placeholder{color:#9ca3af}input::placeholder{color:#9ca3af}button{cursor:pointer}h2,h3{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}button,input{padding:0;line-height:inherit;color:inherit}img,svg{display:block;vertical-align:middle}img{max-width:100%;height:auto}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgba(229,231,235,var(--tw-bg-opacity))}.bg-gray-300{--tw-bg-opacity:1;background-color:rgba(209,213,219,var(--tw-bg-opacity))}.bg-gray-600{--tw-bg-opacity:1;background-color:rgba(75,85,99,var(--tw-bg-opacity))}.bg-red-600{--tw-bg-opacity:1;background-color:rgba(220,38,38,var(--tw-bg-opacity))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgba(229,231,235,var(--tw-bg-opacity))}.hover\:bg-gray-300:hover{--tw-bg-opacity:1;background-color:rgba(209,213,219,var(--tw-bg-opacity))}.hover\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgba(219,234,254,var(--tw-bg-opacity))}.bg-gradient-to-r{background-image:linear-gradient(90deg,var(--tw-gradient-stops))}.from-green-400{--tw-gradient-from:#34d399;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(52,211,153,0))}.to-blue-500{--tw-gradient-to:#3b82f6}.border-black{--tw-border-opacity:1;border-color:rgba(0,0,0,var(--tw-border-opacity))}.border-gray-300{--tw-border-opacity:1;border-color:rgba(209,213,219,var(--tw-border-opacity))}.border-gray-400{--tw-border-opacity:1;border-color:rgba(156,163,175,var(--tw-border-opacity))}.border-blue-500{--tw-border-opacity:1;border-color:rgba(59,130,246,var(--tw-border-opacity))}.rounded{border-radius:.25rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-t{border-top-left-radius:.25rem;border-top-right-radius:.25rem}.rounded-b{border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}.border-2{border-width:2px}.border{border-width:1px}.border-b-2{border-bottom-width:2px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-b{border-bottom-width:1px}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.self-center{align-self:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.justify-items{justify-items:center}.font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.font-light{font-weight:300}.font-medium{font-weight:500}.font-bold{font-weight:700}.h-0{height:0}.h-1{height:.25rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-20{height:5rem}.h-0\.5{height:.125rem}.h-full{height:100%}.text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-lg{font-size:1.125rem}.text-lg,.text-xl{line-height:1.75rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.m-1{margin:.25rem}.m-auto{margin:auto}.mx-0{margin-left:0;margin-right:0}.my-1{margin-top:.25rem;margin-bottom:.25rem}.mx-1{margin-left:.25rem;margin-right:.25rem}.mx-10{margin-left:1rem;margin-right:1rem}.my-2{margin-top:.5rem;margin-bottom:.5rem}.mx-2{margin-left:.5rem;margin-right:.5rem}.mx-3{margin-left:.75rem;margin-right:.75rem}.mx-0\.5{margin-left:.125rem;margin-right:.125rem}.mx-1\.5{margin-left:.375rem;margin-right:.375rem}.mt-0{margin-top:0}.mr-0{margin-right:0}.mb-0{margin-bottom:0}.mt-1{margin-top:.25rem}.mr-1{margin-right:.25rem}.mr-2{margin-right:.5rem}.mb-2{margin-bottom:.5rem}.ml-2{margin-left:.5rem}.mr-4{margin-right:1rem}.mb-4{margin-bottom:1rem}.mt-20{margin-top:5rem}.mr-0\.5{margin-right:.125rem}.mb-0\.5{margin-bottom:.125rem}.mr-1\.5{margin-right:.375rem}.outline-none{outline:2px solid transparent;outline-offset:2px}.p-0{padding:0}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-0\.5{padding:.125rem}.py-0{padding-top:0;padding-bottom:0}.py-1{padding-top:.25rem;padding-bottom:.25rem}.px-1{padding-left:.25rem;padding-right:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.px-2{padding-left:.5rem;padding-right:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.pb-1{padding-bottom:.25rem}.pt-2{padding-top:.5rem}.pl-2{padding-left:.5rem}.pl-4{padding-left:1rem}.pb-1\.5{padding-bottom:.375rem}.placeholder-gray-500::-moz-placeholder{--tw-placeholder-opacity:1;color:rgba(107,114,128,var(--tw-placeholder-opacity))}.placeholder-gray-500:-ms-input-placeholder{--tw-placeholder-opacity:1;color:rgba(107,114,128,var(--tw-placeholder-opacity))}.placeholder-gray-500::placeholder{--tw-placeholder-opacity:1;color:rgba(107,114,128,var(--tw-placeholder-opacity))}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:-webkit-sticky;position:sticky}.top-0{top:0}.right-0{right:0}.left-0{left:0}.left-2{left:.5rem}.top-20{top:5rem}.left-2\.5{left:.625rem}*{--tw-shadow:0 0 transparent;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,0.5);--tw-ring-offset-shadow:0 0 transparent;--tw-ring-shadow:0 0 transparent}.text-center{text-align:center}.text-right{text-align:right}.text-black{--tw-text-opacity:1;color:rgba(0,0,0,var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgba(255,255,255,var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgba(156,163,175,var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgba(107,114,128,var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity:1;color:rgba(55,65,81,var(--tw-text-opacity))}.text-red-500{--tw-text-opacity:1;color:rgba(239,68,68,var(--tw-text-opacity))}.text-yellow-500{--tw-text-opacity:1;color:rgba(245,158,11,var(--tw-text-opacity))}.text-yellow-900{--tw-text-opacity:1;color:rgba(120,53,15,var(--tw-text-opacity))}.text-green-500{--tw-text-opacity:1;color:rgba(16,185,129,var(--tw-text-opacity))}.text-blue-500{--tw-text-opacity:1;color:rgba(59,130,246,var(--tw-text-opacity))}.text-blue-600{--tw-text-opacity:1;color:rgba(37,99,235,var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgba(0,0,0,var(--tw-text-opacity))}.hover\:text-blue-500:hover{--tw-text-opacity:1;color:rgba(59,130,246,var(--tw-text-opacity))}.hover\:text-blue-700:hover{--tw-text-opacity:1;color:rgba(29,78,216,var(--tw-text-opacity))}.hover\:underline:hover{text-decoration:underline}.hover\:no-underline:hover{text-decoration:none}.w-1{width:.25rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-12{width:3rem}.w-20{width:5rem}.w-32{width:8rem}.w-3\/12{width:25%}.w-4\/12{width:33.333333%}.w-6\/12{width:50%}.w-70{width:70%}.w-11\/12{width:91.666667%}.w-full{width:100%}.z-50{z-index:50}.transform{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;transform:translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-8{--tw-translate-y:-2rem}@-webkit-keyframes spin{to{transform:rotate(1turn)}}@keyframes spin{to{transform:rotate(1turn)}}@-webkit-keyframes ping{75%,to{transform:scale(2);opacity:0}}@keyframes ping{75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{50%{opacity:.5}}@keyframes pulse{50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}
+    </style>
+    <style>
+        .outer-box {
+            height: 10%;
+            background-color: #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+        .inner-box {
+            width: 50%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner-box .text {
+            width: 80%;
+            text-align: center;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body style="background-color:#F3F8FF;">
+
+    <!-- Header  -->
+    <header class="bg-white w-full fixed top-0 left-0 right-0 z-50">
+        <div class="w-11/12 bg-white  h-full m-auto flex justify-between items-center  ">
+            <!--Left-->
+            <div class=" flex items-center">
+              <a href="/" class="logo text-4xl mr-1.5">
+                {% comment %} <i class="fab fa-linkedin text-blue-500"></i> {% endcomment %}
+                <img src="{% static 'images/DeConnect_Logo.png' %}" alt="Logo" class="w-12 h-12">
+              </a>
+              <span style="font-weight:bold;">DeConnect</span>
+              {% comment %} <div class="search bg-gray-200 mt-1 px-1 rounded flex">
+                <i class="fas fa-search p-1 flex justify-center items-center"></i>
+                <input type="text" placeholder="Search" class="bg-transparent p-1 outline-none ">
+              </div> {% endcomment %}
+            </div>
+
+            <!--RIght-->
+            <div class=" h-full flex justify-center items-center ">
+              <!-- Nav -->
+              <ul class=" h-full flex justify-center items-center">
+
+                <li class="h-full" style="margin-right:1rem">
+                  <a href="#" class="h-full flex flex-col justify-between items-center text-center text-gray-600 hover:text-black p-1  px-2">
+                    <i class="far fa-comment-alt text-xl relative" style="color:#0057B7">
+                    </i>
+                  </a>
+                </li>
+               
+                <li class="h-full" style="margin-right:1rem">
+                  <a href="#" class="h-full flex flex-col justify-between items-center text-center text-gray-600 hover:text-black p-1  px-2">
+                    <i class="far fa-bell text-xl relative" style="color:#0057B7">
+                    </i>
+                  </a>
+                </li>
+
+                <li class="h-full">
+                  <a href="#" class="h-full flex flex-col justify-between items-center text-center text-gray-600 hover:text-black p-1  px-2">
+
+                    <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-12 h-12 rounded-full">
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="w-11/12 m-auto mt-20 flex">
+      
+      <!-- Left Sidebar -->
+      <div class="left-sidebar w-3/12">
+        
+        <!-- Profile card-->
+        <div class="border border-gray-300 rounded bg-white pb-1.5">
+            <div class="h-16 rounded-t"></div>
+
+            <div class="text-center mb-4">
+                <a href="#">
+                <div class="bg-white w-full h-18 m-auto rounded-full p-0.5 transform -translate-y-8 justify-items">
+                <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Avatar" class="w-70">
+                </div>
+
+                <h2 class="text-xl hover:underline">
+                    John Deo 
+                </h2>
+            </a>
+
+                <p class="text-gray-400 mt-1">
+                    MS in Human Computer Interection
+                </p>
+            </div>
+
+            <div class="border-gray-400 text-sm">
+                <div class="outer-box">
+                    <div class="inner-box">
+                        <div class="text" style="font-weight:bold;">334</div>
+                        <div class="text" style="color:#716E72">Connections</div>
+                    </div>
+                    <div class="inner-box">
+                        <div class="text" style="font-weight:bold;">12</div>
+                        <div class="text" style="color:#716E72">Groups</div>
+                    </div>
+                </div>
+                <div style="justify-items:center">
+                    <a href="#" class="flex justify-between items-center my-1 p-1 border-b" style="color:#0057B7;">
+                        <span>View my profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+      </div>
+
+
+      <!-- article -->
+      <div class="w-6/12 mx-10">
+         <!--Form   -->
+
+         <form class="bg-white p-2 border border-gray-300 rounded">
+          <div class="flex h-12 mb-2 px-2 border-gray-300 hover:bg-gray-200">
+            <div class="w-12 h-full flex justify-center items-center">
+              {% comment %} <i class="fas fa-edit text-xl text-blue-600"></i> {% endcomment %}
+              <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-7 h-7 rounded-full">
+            </div>
+            <input type="text" placeholder="Write Something..." class="bg-transparent w-full h-full p-4 outline-none placeholder-gray-500">
+          </div>
+
+          <!-- Icons -->
+          <div class="py-2 flex items-center">
+
+            <button class="py-3 px-2 rounded flex items-center hover:bg-gray-200">
+              <i class="far fa-edit mr-1.5 text-lg" style="color:#0057B7"></i> 
+              <span class="text-gray-600">Share an update</span>
+              {% comment %} #716E72 {% endcomment %}
+            </button>
+
+            <button class="py-3 px-2 rounded flex items-center hover:bg-gray-200">
+              <i class="far fa-clipboard mr-1.5 text-lg" style="color:#0057B7"></i> 
+              <span class="text-gray-600">Write an announcement</span>
+            </button>
+
+          </div>
+         </form>
+
+         <!-- Posts -->
+         <article class="posts">
+           <section class="post bg-white py-2 my-2 border rounded">
+             <!-- top -->
+             <div class="post-header p-2 flex items-start">
+               <a href="#" class="w-12 h-12 mr-2">
+                <img src="https://homevest.com/wp-content/uploads/2019/05/female1-512.png" alt="image">
+               </a>
+
+               <a href="#" >
+                  <h3 class="flex items-center" >
+                    <span class="text-gray-700 font-bold hover:text-blue-500 hover:underline ">Harriet Best</span>
+                    <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
+                    <span class="text-gray-500 font-light">Following</span>
+                  </h3>
+
+                  <p class="text-sm text-gray-500">
+                    Founder and Writer at Harriet Photography
+                  </p>
+
+                  <p class="time text-sm text-gray-500 flex items-center">
+                    <span>1d</span>
+                    <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
+                    <i class="fas fa-globe-asia text-lg"></i>
+                  </p>
+
+               </a>
+
+               <button style="margin-left:auto;" class="dots w-7 h-7 flex justify-center items-center rounded-full hover:bg-gray-200">
+                  <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
+                  <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
+                  <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
+               </button>
+
+             </div>
+
+             <!-- post article -->
+             <div class="px-2">
+               <p class="py-2">
+                 Checkout my new photos from Melbourne City
+               </p>
+
+               <a href="#" class="text-blue-600 hover:underline">https://harrietfh.me</a>
+             </div>
+
+             <!-- content -->
+
+             <img src="https://images.unsplash.com/photo-1494236472818-d35e50e604cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80" alt="Melbourne" class="w-full h-50 my-2">
+
+             <!-- likes  -->
+             <div class="mx-3 px-2 h-8 m-auto border-b border-gray-300">
+              <a href="#" class="h-full flex items-center">
+                <i class="fas fa-thumbs-up mx-0.5 text-xs text-blue-500"></i>
+                <i class="fas fa-heart mx-0.5 text-xs text-red-500"></i>
+                
+                <span class="count text-xs mb-0.5 ml-2 hover:text-blue-500 hover:underline">105</span>
+              </a>
+            </div>
+
+             <!-- comments -->
+             <div class="mt-1 mx-3 flex items-center">
+               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                <i class="far fa-thumbs-up text-xl mr-1.5"></i> 
+                <span class="mt-0.25">Like </span> 
+               </button>
+
+               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                <i class="far fa-comment-dots text-xl mr-1.5"></i> 
+                <span class="mt-0.25">Comment</span>  
+               </button>
+
+               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                <i class="fas fa-share text-xl mr-1.5"></i> 
+                <span class="mt-0.25">Share</span>  
+               </button>
+
+               <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                <i class="fas fa-paper-plane text-xl mr-1.5"></i> 
+                <span class="mt-0.25">Send</span>  
+               </button>
+
+             </div>
+
+            </section>
+
+            <section class="post bg-white py-2 my-2 border rounded">
+              <!-- top -->
+              <div class="post-header p-2 flex items-start">
+                <a href="#" class="w-12 h-12 mr-2">
+                 <img src="https://homevest.com/wp-content/uploads/2019/05/female1-512.png" alt="image">
+                </a>
+ 
+                <a href="#" >
+                   <h3 class="flex items-center" >
+                     <span class="text-gray-700 font-bold hover:text-blue-500 hover:underline ">Harriet Best</span>
+                     <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
+                     <span class="text-gray-500 font-light">Following</span>
+                   </h3>
+ 
+                   <p class="text-sm text-gray-500">
+                     Founder and Writer at Harriet Photography
+                   </p>
+ 
+                   <p class="time text-sm text-gray-500 flex items-center">
+                     <span>1d</span>
+                     <span class="w-1 h-1  mx-1.5 bg-gray-600 rounded-full self-center"></span>
+                     <i class="fas fa-globe-asia text-lg"></i>
+                   </p>
+ 
+                </a>
+ 
+                <button style="margin-left:auto;" class="dots w-7 h-7 flex justify-center items-center rounded-full hover:bg-gray-200">
+                   <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
+                   <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
+                   <span class="w-1 h-1 mr-0.5 bg-gray-600 rounded-full"></span>
+                </button>
+ 
+              </div>
+ 
+              <!-- post article -->
+              <div class="px-2">
+                <p class="py-2">
+                  Checkout my new photos from Melbourne City
+                </p>
+ 
+                <a href="#" class="text-blue-600 hover:underline">https://harrietfh.me</a>
+              </div>
+ 
+              <!-- content -->
+ 
+              <img src="https://images.unsplash.com/photo-1494236472818-d35e50e604cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80" alt="Melbourne" class="w-full h-50 my-2">
+ 
+              <!-- likes  -->
+              <div class="mx-3 px-2 h-8 m-auto border-b border-gray-300">
+               <a href="#" class="h-full flex items-center">
+                 <i class="fas fa-thumbs-up mx-0.5 text-xs text-blue-500"></i>
+                 <i class="fas fa-heart mx-0.5 text-xs text-red-500"></i>
+                 
+                 <span class="count text-xs mb-0.5 ml-2 hover:text-blue-500 hover:underline">105</span>
+               </a>
+             </div>
+ 
+              <!-- comments -->
+              <div class="mt-1 mx-3 flex items-center">
+                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                 <i class="far fa-thumbs-up text-xl mr-1.5"></i> 
+                 <span class="mt-0.25">Like </span> 
+                </button>
+ 
+                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                 <i class="far fa-comment-dots text-xl mr-1.5"></i> 
+                 <span class="mt-0.25">Comment</span>  
+                </button>
+ 
+                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                 <i class="fas fa-share text-xl mr-1.5"></i> 
+                 <span class="mt-0.25">Share</span>  
+                </button>
+ 
+                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                 <i class="fas fa-paper-plane text-xl mr-1.5"></i> 
+                 <span class="mt-0.25">Send</span>  
+                </button>
+ 
+              </div>
+ 
+             </section>
+          </article>
+        </div>
+
+
+      <!-- Right sidebar -->
+      <div class="right-sidebar w-4/12 h-14 relative">
+        
+        <!-- Second Box -->
+        <div class="border border-gray-300 rounded bg-white p-2 my-2 mt-0">
+
+          <div class=" flex justify-between items-center px-2 mb-2">
+            <h2 class="text-xl" style="color:#716E72">Upcoming Events</h2>
+          </div>
+
+          <!-- Courses -->
+          <div class="flex flex-col">
+            <a href="#" class="py-1 px-2 hover:bg-gray-300">
+              <h3 class="font-medium">1. The Six Morning Habits of High Perfor...</h3>
+              <p class="text-sm text-gray-500 pl-4">Pete Mockaitis | How to Be Awes...</p>
+            </a>
+
+            <a href="#" class="py-1 px-2 hover:bg-gray-300">
+              <h3 class="font-medium">2. Unconscious Bias</h3>
+              <p class="text-sm text-gray-500 pl-4">Stacey Gordon</p>
+            </a>
+
+            <a href="#" class="py-1 px-2 hover:bg-gray-300">
+              <h3 class="font-medium">3. Critical Thinking for Better Judgement...</h3>
+              <p class="text-sm text-gray-500 pl-4">Becki Saltzman</p>
+            </a>
+          </div>
+
+          
+          <div style="justify-items:center">
+            {% comment %} <a href="#" class="flex justify-between items-center my-1 p-1 border-b" style="color:#0057B7;">
+                <span>View my profile</span>
+            </a> {% endcomment %}
+            <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b" style="color:#0057B7;">
+              View all events 
+            </a>
+        </div>
+
+        </div>
+
+        <!-- First box -->
+        <div class="border border-gray-300 rounded bg-white p-2 mb-2">
+
+          <div class="flex justify-between items-center mb-2">
+            <h2 class="text-xl" style="color:#716E72">Recent Connections</h2>
+          </div>
+
+          <!-- Profiles -->
+          <div class="flex flex-col">
+            <div class="rec-profile flex justify-between items-center my-1">
+
+              <div class="flex justify-between">
+                <a href="#" class="rounded-full w-12 h-12 mr-2">
+                  <img src="https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png" alt="Avatar" class="rounded-full">
+                </a>
+                <a href="#">
+                  <h2>Jane Doe</h2>
+                  <p class="text-gray-400 text-sm">Vice Chairman</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="rec-profile flex justify-between items-center my-1">
+
+              <div class="flex justify-between">
+                <a href="#" class="rounded-full w-12 h-12 mr-2">
+                  <img src="https://c0.klipartz.com/pngpicture/557/749/gratis-png-iconos-de-computadora-avatar-usuario-perfil-blog-personal-thumbnail.png" alt="Avatar" class="rounded-full">
+                </a>
+                <a href="#">
+                  <h2>John Doe</h2>
+                  <p class="text-gray-400 text-sm">CTO</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="inline-block mt-1 text-blue-600 hover:bg-blue-100">
+            View all connections 
+          </a>
+        </div>
+
+        
+
+        <!-- First box -->
+        <div class="border border-gray-300 rounded bg-white p-2">
+
+            <div class="flex justify-between items-center mb-2">
+              <h2 class="text-xl" style="color:#716E72">Groups</h2>
+            </div>
+  
+            <!-- Profiles -->
+            <div class="flex flex-col">
+              <div class="rec-profile flex justify-between items-center my-1">
+  
+                <div class="flex justify-between">
+                  <a href="#" class="rounded-full w-12 h-12 mr-2">
+                    <img src="https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png" alt="Avatar" class="rounded-full">
+                  </a>
+                  <a href="#">
+                    <h2>Jane Doe</h2>
+                  </a>
+                </div>
+              </div>
+  
+              <div class="rec-profile flex justify-between items-center my-1">
+  
+                <div class="flex justify-between">
+                  <a href="#" class="rounded-full w-12 h-12 mr-2">
+                    <img src="https://c0.klipartz.com/pngpicture/557/749/gratis-png-iconos-de-computadora-avatar-usuario-perfil-blog-personal-thumbnail.png" alt="Avatar" class="rounded-full">
+                  </a>
+                  <a href="#">
+                    <h2>John Doe</h2>
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <a href="#" class="inline-block mt-1 text-blue-600 hover:bg-blue-100">
+              View all groups 
+            </a>
+          </div>
+
+        <!-- Footer -->
+        <footer class=" p-2 text-sm text-center text-gray-700">
+          <div class="flex flex-wrap justify-evenly items-center">
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">About</a>
+            
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">Accessibility</a>
+
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">Help Center</a>
+
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">Privacy & Terms <i class="fas fa-angle-down"></i> </a>
+
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">Ad Choices</a>
+
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">Advertising</a>
+
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">Business Services <i class="fas fa-angle-down"></i> </a>
+
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">Get the LinkedIn app</a>
+
+            <a href="#" class="m-1 p-0.5 hover:underline hover:text-blue-500">More</a>
+          </div>
+
+          <!-- Copyright and credit -->
+          <p class="my-2">
+            <span class="text-blue-500 font-bold">Linked</span><i class="fab fa-linkedin text-blue-600"></i> LinkedIn Corporation &copy; 2021
+          </p>
+
+          <!-- <p>
+            Cloned by <a href="https://twitter.com/TutulDevs" class="text-green-500">Tutul</a> using <a href="https://tailwindcss.com/" class="text-green-500">Tailwind CSS</a>
+          </p> -->
+
+        </footer>
+
+      </div>
+
+    </main>
+
+</body>
+</html>
