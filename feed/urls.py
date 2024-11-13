@@ -3,6 +3,6 @@ from feed.views import post_form, connections
 
 #URL Configuration
 urlpatterns = [
-    path('', post_form),
-    path('connections/', connections),
+    path('connections/', connections, name="connections"),
+    path('', post_form, name='feed'),
 ]
