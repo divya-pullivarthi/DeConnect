@@ -64,9 +64,13 @@ Pipfile
 Pipfile.lock
 staticfiles/admin
 staticfiles/Connection
-staticfiles/groups
-staticfiles/feed
-staticfiles/Login Register
+staticfiles/Groups
+staticfiles/Feed
+staticfiles/Login_Register
+staticfiles/images/Connection
+staticfiles/images/Groups
+staticfiles/images/Feed
+staticfiles/images/Login_Register
 
 # Flask stuff:
 instance/
