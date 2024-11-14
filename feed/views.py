@@ -11,11 +11,12 @@ def post_form(request):
         "post_form": post_form
     })
 
-
 def connections(request):
     return render(request, 'connections.html')
 
-
 def groups(request):
     return render(request, 'groups.html')
+
+def events(request):
+    return render(request, 'events.html')
 
