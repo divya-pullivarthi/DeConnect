@@ -57,7 +57,7 @@
 
                 <li class="h-full">
                   <a href="#" class="h-full flex flex-col justify-between items-center text-center text-gray-600 hover:text-black p-1  px-2">
-                    <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-12 h-12 rounded-full">
+                    <img src="{% static 'images/feed/ellipse 6.png' %}" alt="Me" class="w-12 h-12 rounded-full">
                   </a>
                 </li>
 
@@ -94,7 +94,7 @@
             <div class="text-center mb-4">
                 <a href="#">
                 <div class="bg-white w-full h-18 m-auto rounded-full p-0.5 transform -translate-y-8 justify-items">
-                <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Avatar" class="w-70">
+                <img src="{% static 'images/feed/ellipse 6.png' %}" alt="Avatar" class="w-70">
                 </div>
 
                 <h2 class="text-xl hover:underline">
@@ -139,7 +139,7 @@
           <div class="flex h-12 mb-2 px-2 border-gray-300 hover:bg-gray-200">
             <div class="w-12 h-full flex justify-center items-center">
               {% comment %} <i class="fas fa-edit text-xl text-blue-600"></i> {% endcomment %}
-              <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-7 h-7 rounded-full">
+              <img src="{% static 'images/feed/ellipse 6.png' %}" alt="Me" class="w-7 h-7 rounded-full">
             </div>
             <input type="text" placeholder="Write Something..." class="bg-transparent w-full h-full p-4 outline-none placeholder-gray-500">
           </div>
@@ -165,17 +165,17 @@
          <article class="posts">
             <div class="post-container">
                 <div class="post-top">
-                    <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" alt="Me" class="w-7 h-7 rounded-full">
+                    <img src="{% static 'images/feed/center/ellipse 6.png' %}" alt="Me" class="w-7 h-7 rounded-full">
                     <div class="user-info">
-                        <div class="name">John Doe</div>
-                        <div class="title">Software Engineer</div>
+                        <div class="name">Michel Cook</div>
+                        <div class="title">Faculty in AI</div>
                     </div>
                 </div>
                 <div class="post-center border-gray-300 border-b border-t my-3">
                     <div class="content">Learn the art of Design Thinking in a hands-on workshop led by DePaul faculty. Perfect for aspiring problem-solvers! RSVP Now and Start Designing!</div>
                     <div class="stats link-blue my-3">
-                        <span class="like-b font-medium">10 Likes</span>
-                        <span class="like-b font-medium mx-10">5 Comments</span>
+                        <span class="like-b font-medium">24 Likes</span>
+                        <span class="like-b font-medium mx-10">10 Comments</span>
                     </div>
                 </div>
 
@@ -199,8 +199,92 @@
                 </div>
             </div>
 
-           
           </article>
+
+         <!-- Posts 2-->
+         <article class="posts">
+          <div class="post-container">
+              <div class="post-top">
+                  <img src="{% static 'images/feed/center/ellipse 6-1.png' %}" alt="Me" class="w-7 h-7 rounded-full">
+                  <div class="user-info">
+                      <div class="name">Lilly Cooperson</div>
+                      <div class="title">MS in Human Computer Intraction</div>
+                  </div>
+              </div>
+              <div class="post-center border-gray-300 border-b border-t my-3">
+                  <div class="content">💡 How Advertising Shapes Our Minds 💡In today's world, advertising is everywhere—from our phones to our commutes—and it influences us more than we might think. This article dives deep into the impact advertising has on our minds, complete with practical examples that reveal how ads shape our thoughts, behaviors, and decisions. Link Here.</div>
+                  <img src="{% static 'images/feed/center/rectangle 17.png' %}" alt="Me" class="w-full">
+                  <div class="stats link-blue my-3">
+                      <span class="like-b font-medium">13 Likes</span>
+                      <span class="like-b font-medium mx-10">17 Comments</span>
+                  </div>
+              </div>
+
+              <!-- comments -->
+              <div class="mt-1 mx-3 flex items-center w-full justify-space">
+                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                 <i class="far fa-heart text-xl mr-1.5 like-color"></i>
+                 <span class="mt-0.25 link-blue font-medium">Like </span> 
+                </button>
+ 
+                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                 <i class="far fa-comment-alt text-xl mr-1.5 like-color"></i> 
+                 <span class="mt-0.25 link-blue font-medium">Comment</span>  
+                </button>
+ 
+                <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+                 <i class="fas fa-share-alt text-xl mr-1.5 like-color"></i> 
+                 <span class="mt-0.25 link-blue font-medium">Share</span>  
+                </button>
+ 
+              </div>
+          </div>
+
+        </article>
+
+      </article>
+
+      <!-- Posts 3-->
+      <article class="posts">
+       <div class="post-container">
+           <div class="post-top">
+               <img src="{% static 'images/feed/center/ellipse 6-2.png' %}" alt="Me" class="w-7 h-7 rounded-full">
+               <div class="user-info">
+                   <div class="name">Maria James</div>
+                   <div class="title">MS in Cyber Security</div>
+               </div>
+           </div>
+           <div class="post-center border-gray-300 border-b border-t my-3">
+               <div class="content">Harnessing AI for Enhanced Cybersecurity Defenses, Read more...</div>
+               <img src="{% static 'images/feed/center/rectangle 17-1.png' %}" alt="Me" class="w-full">
+               <div class="stats link-blue my-3">
+                   <span class="like-b font-medium">17 Likes</span>
+                   <span class="like-b font-medium mx-10">13 Comments</span>
+               </div>
+           </div>
+
+           <!-- comments -->
+           <div class="mt-1 mx-3 flex items-center w-full justify-space">
+             <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+              <i class="far fa-heart text-xl mr-1.5 like-color"></i>
+              <span class="mt-0.25 link-blue font-medium">Like </span> 
+             </button>
+
+             <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+              <i class="far fa-comment-alt text-xl mr-1.5 like-color"></i> 
+              <span class="mt-0.25 link-blue font-medium">Comment</span>  
+             </button>
+
+             <button class="flex  outline-none rounded py-2 px-2  text-gray-600 hover:bg-gray-200">
+              <i class="fas fa-share-alt text-xl mr-1.5 like-color"></i> 
+              <span class="mt-0.25 link-blue font-medium">Share</span>  
+             </button>
+
+           </div>
+       </div>
+
+     </article>
+        
         </div>
 
 

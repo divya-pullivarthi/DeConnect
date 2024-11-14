@@ -63,6 +63,10 @@ db.sqlite3-journal
 Pipfile
 Pipfile.lock
 staticfiles/admin
+staticfiles/Connection
+staticfiles/groups
+staticfiles/feed
+staticfiles/Login Register
 
 # Flask stuff:
 instance/
