@@ -23,10 +23,10 @@
         <div class="w-90p bg-white  h-full m-auto flex justify-between items-center  ">
             <!--Left-->
             <div class=" flex items-center">
-              <a href="/" class="logo text-4xl mr-1.5">
+              <a href="{% url 'feed:feed' %}" class="logo text-4xl mr-1.5">
                 <img src="{% static 'images/DeConnect_Logo.png' %}" alt="Logo" class="w-12 h-12">
               </a>
-              <span style="font-weight:bold;">DeConnect</span>
+              <span style="font-weight:bold;"><a href="{% url 'feed:feed' %}">DeConnect</a></span>
             </div>
 
             <!-- Center -->
