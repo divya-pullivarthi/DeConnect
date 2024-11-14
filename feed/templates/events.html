@@ -191,31 +191,29 @@
         <div class="border border-gray-300 rounded bg-white p-4 my-2 mt-0">
 
             <div class=" flex justify-between items-center px-2 mb-2">
-                <h2 class="text-xl" style="color:#716E72">Upcoming Events</h2>
-            </div>
+              <h2 class="text-xl" style="color:#716E72">Upcoming Events</h2>
+          </div>
 
-            <!-- Courses -->
-            <div class="flex flex-col">
-                <a href="#" class="py-1 px-2 hover:bg-gray-300">
-                    <h3 class="link-blue font-medium">Design Thinking Workshop</h3>
-                    <p class="text-sm text-gray-500">Oct 25, 2024 | 5:00 PM - 7:00 PM</p>
-                </a>
+          <!-- Courses -->
+          <div class="flex flex-col">
+              <a href="#" class="py-1 px-2 hover:bg-gray-300">
+                  <h3 class="link-blue font-medium">Design Thinking Workshop</h3>
+                  <p class="text-sm text-gray-500">Oct 25, 2024 | 5:00 PM - 7:00 PM</p>
+              </a>
 
-                <a href="#" class="py-1 px-2 hover:bg-gray-300">
-                    <h3 class="link-blue font-medium">Unconscious Bias</h3>
-                    <p class="text-sm text-gray-500">Stacey Gordon</p>
-                </a>
+              <a href="#" class="py-1 px-2 hover:bg-gray-300">
+                  <h3 class="link-blue font-medium">Career Networking Fair</h3>
+                  <p class="text-sm text-gray-500">Oct 15, 2024 | 10:00 AM - 4:00 PM</p>
+              </a>
 
-                <a href="#" class="py-1 px-2 hover:bg-gray-300">
-                    <h3 class="link-blue font-medium">Critical Thinking for Better Judgement...</h3>
-                    <p class="text-sm text-gray-500">Becki Saltzman</p>
-                </a>
-            </div>
+              <a href="#" class="py-1 px-2 hover:bg-gray-300">
+                  <h3 class="link-blue font-medium">Alumni Talks with CDM Folks</h3>
+                  <p class="text-sm text-gray-500">Oct 9, 2024 | 5:00 PM - 7:00 PM</p>
+              </a>
+          </div>
 
             <div class="justify-items mt-4">
-                <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;">
-                    View all events 
-                </a>
+              <a href="{% url 'feed:events' %}" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;"> View all events </a>
             </div>
 
         </div>
@@ -257,9 +255,7 @@
           </div>
 
           <div class="justify-items mt-4">
-              <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;">
-                View all connections 
-              </a>
+            <a href="{% url 'feed:connections' %}" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;"> View all connections </a>
           </div>
         </div>
         
@@ -299,9 +295,7 @@
             </div>
 
             <div class="justify-items mt-4">
-                <a href="#" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;">
-                  View all groups 
-                </a>
+              <a href="{% url 'feed:groups' %}" class="flex inline-block mt-1 text-blue-600 hover:bg-blue-100 border-b font-medium text-sm" style="color:#0057B7;"> View all groups </a>
             </div>
           </div>
 
