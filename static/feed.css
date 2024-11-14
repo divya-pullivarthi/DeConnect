@@ -872,3 +872,42 @@ body {
 .like-color {
   color: #F2A359;
 }
+
+
+/* Logout dropdown */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  color: #f1f1f1;
+  background-color: #0057B7;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content form {
+  margin: 0;
+}
+
+.dropdown-content .logout-button {
+  color: #f1f1f1;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content .logout-button:hover {
+  background-color: #0057B7;
+}

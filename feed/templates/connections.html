@@ -12,6 +12,7 @@
     
 	  <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="{% static 'feed.css' %}">
+    <script src="{% static 'feed.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'connections.css' %}">
     <style>
     </style>
@@ -56,10 +57,16 @@
                   </a>
                 </li>
 
-                <li class="h-full">
-                  <a href="#" class="h-full flex flex-col justify-between items-center text-center text-gray-600 hover:text-black p-1  px-2">
+                <li class="h-full dropdown">
+                  <a href="#" class="h-full flex flex-col justify-between items-center text-center text-gray-600 hover:text-black p-1 px-2 dropbtn">
                     <img src="{% static 'images/feed/ellipse 6.png' %}" alt="Me" class="w-12 h-12 rounded-full">
                   </a>
+                  <div class="dropdown-content">
+                      <form method="post" action="{% url 'signup:logout' %}">
+                          {% csrf_token %}
+                          <button type="submit" class="logout-button">Logout</button>
+                      </form>
+                  </div>
                 </li>
 
               </ul>
