@@ -14,4 +14,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    
+    const likeButton = document.querySelector('.like-button');
+    const likeCount = document.getElementById('like-count');
+    const likeIcon = document.getElementById('like-icon');
+    let liked = false;
+
+    likeButton.addEventListener('click', function() {
+        let count = parseInt(likeCount.textContent);
+        if (liked) {
+            count--;
+            likeIcon.classList.remove('fas');
+            likeIcon.classList.add('far');
+        } else {
+            count++;
+            likeIcon.classList.remove('far');
+            likeIcon.classList.add('fas');
+        }
+        liked = !liked;
+        likeCount.textContent = `${count} Likes`;
+    });
 });
