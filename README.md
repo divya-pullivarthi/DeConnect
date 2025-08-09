@@ -60,7 +60,7 @@ Our cost management approach focused on optimizing resources to stay within budg
 *   **Total Project Budget:** **$111,456**
 *   **Project Timeline:** September 19, 2024 - November 14, 2024
 
-**Total Cost Estimate Breakdown:**
+  <!-- **Total Cost Estimate Breakdown:**
 
 | WBS Item | WBS Level 1 Totals | % of Total |
 | :--- | :--- | :--- |
@@ -71,7 +71,7 @@ Our cost management approach focused on optimizing resources to stay within budg
 | 5. Training and Support | $6,560 | 6% |
 | 6. Meetings | $4,000 | 4% |
 | 7. Reserves (10% of total estimate) | $10,132 | 9% |
-| **Total Project Cost Estimate** | **$111,456** | **100%** |
+| **Total Project Cost Estimate** | **$111,456** | **100%** |  -->
 
 ## Design & Development Process
 
